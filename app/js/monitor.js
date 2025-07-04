@@ -7,6 +7,7 @@ const os = osu.os;
 //variables
 
 const cpu_overload = 10;
+let lastNotifTime = new Date().getTime();
 
 notifyUser({
   title: "CPU Overload",

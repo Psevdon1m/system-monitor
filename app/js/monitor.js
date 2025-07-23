@@ -1,13 +1,20 @@
 const path = require("path");
 const osu = require("node-os-utils");
+const { ipcRenderer } = require("electron");
 const mem = osu.mem;
 const cpu = osu.cpu;
 const os = osu.os;
 
 //variables
 
-const cpu_overload = 20;
-const alertFrequency = 1; //minutes
+let cpu_overload;
+let alert_frequency; //minutes
+
+//get settings
+ipcRenderer.on("settings:get", (e, data) => {
+  cpu_overload = Number(data.cpu_overload);
+  alert_frequency = Number(data.alert_frequency);
+});
 
 function getAndSetupCpuUsage() {
   cpu.usage().then((i) => {
@@ -23,7 +30,7 @@ function getAndSetupCpuUsage() {
     }
     //check overload
 
-    if (i >= cpu_overload && runNotify(alertFrequency)) {
+    if (i >= cpu_overload && runNotify(alert_frequency)) {
       notifyUser({
         title: "CPU Overload",
         body: `CPU is over ${cpu_overload}%`,

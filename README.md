@@ -25,7 +25,7 @@ System Monitor is a desktop application designed to provide real-time monitoring
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/system-monitor.git
+   git clone https://github.com/psevdon1m/system-monitor.git
    cd system-monitor
    ```
 2. Install dependencies:

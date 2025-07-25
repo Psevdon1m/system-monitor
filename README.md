@@ -10,6 +10,7 @@ System Monitor is a desktop application designed to provide real-time monitoring
 - Visual progress bars with smooth animations
 - Customizable CPU overload alerts and notification frequency
 - System information display (CPU model, OS, computer name, uptime)
+- Push notifications when CPU is overloaded
 - Tray icon for quick access
 - Cross-platform support (Windows, macOS, Linux)
 
